@@ -12,7 +12,8 @@
 - All 100 books came back in stock, so the "out of stock per rating" query returns nothing. Not a bug, just what the site has.
 
 **If it started blocking me after 50 requests:**
-- Add a real delay between pages (already have a 1s sleep, would bump it up).
-- Set a real `User-Agent` header - `requests`' default one is an easy way to get flagged.
+- Add a delay between pages (already have a 1s sleep, would bump it up).
+- - If it's IP-based, rotate through a couple of proxies.
+- Set a real User-Agent header - requests default one is an easy way to get flagged.
 - Cache pages already pulled to disk so a retry doesn't re-hit ones that worked.
-- If it's IP-based, rotate through a couple of proxies.
+
